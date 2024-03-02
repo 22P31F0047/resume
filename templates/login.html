@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url('data:image/jpeg;base64,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');
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(8px);
+            position: fixed;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+           
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image">
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
